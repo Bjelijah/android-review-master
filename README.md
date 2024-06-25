@@ -13,6 +13,18 @@
 类 委托对应java代理模式，委托类(代理类)持有真实类的对象，然后委托类（代理类）调用真实类的同名方法，最终真正实现的是方法的是真实类，这其实就是代理模式
 属性委托 set/get
 ### 协程原理
+协程并发编程的底层仍是用线程池实现
+简洁 更高抽象隐藏异步实现细节，实现写异步如同同步的顺序式写法
+比闭包更好用的上下文参数
+更方便处理并发逻辑 父子协程概念 可以更容易的管理协程的执行
+协程启动 Job = CoroutineScope.launch
+取消 cancel join
+不可取消 withContext(NonCancellable)
+调度器：Dispatcher.IO 
+挂起函数：suspend 本质return + callback
+场景多任务并发，场景简单，不涉及线程阻塞和唤醒
+
+
 
 ### Q:Handler工作流程
 A：1）创建Lopper，消息队列，handler对象 2）handler发送message到消息队列 3）Looper取出，分发给handler 4）handler 接受message，处理。1thread 1 lopper n个handler
