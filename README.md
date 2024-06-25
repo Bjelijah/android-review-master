@@ -1,6 +1,19 @@
 # Android
 
 ## 必问
+### Q:kotlin相关：
+### 委托原理
+类委托：by
+属性委托 by Delegate()
+
+延迟变量 by lazy
+可观察委托 obserable  vetoable
+多个属性映射Map by map
+
+类 委托对应java代理模式，委托类(代理类)持有真实类的对象，然后委托类（代理类）调用真实类的同名方法，最终真正实现的是方法的是真实类，这其实就是代理模式
+属性委托 set/get
+### 协程原理
+
 ### Q:Handler工作流程
 A：1）创建Lopper，消息队列，handler对象 2）handler发送message到消息队列 3）Looper取出，分发给handler 4）handler 接受message，处理。1thread 1 lopper n个handler
 ### Q：Handler内存泄漏
@@ -19,5 +32,8 @@ View 渲染
 setView——> Handler->mTraversalRunnable-> performTraversals() -> measure –> layout –> draw ->
 ViewRootImpl (measure,layout,draw)->drawSoftware-> canvas
 ### Q:MVVM,ViewModel LiveData LifeCycle 源码实现
+https://github.com/xfhy/Android-Notes/tree/master/Blogs/Android/%E7%B3%BB%E7%BB%9F%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90
 A：Model,View,ViewModel, Activity 继承LifeCycle ,Activity ViewModelProviders.of .get 创建ViewModel ViewModel new LiveData，Activity obser liveData，ViewModel postValue
+
+
 
